@@ -12,6 +12,9 @@ class Rover {
     }
 
     public void receive(String commands) {
-
+        if (commands.isEmpty()) {
+            return;
+        }
+        this.y += 1;
     }
 }

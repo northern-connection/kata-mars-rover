@@ -17,4 +17,15 @@ public class MarsRoverTest {
         assertThat(rover.y, is(0));
         assertThat(rover.direction, is("N"));
     }
+
+    @Test
+    public void forwards_facing_north() {
+        Rover rover = new Rover(0,0,"N");
+
+        rover.receive("f");
+
+        assertThat(rover.x, is(0));
+        assertThat(rover.y, is(1));
+        assertThat(rover.direction, is("N"));
+    }
 }
