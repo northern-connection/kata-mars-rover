@@ -18,5 +18,6 @@ This is a summary of the part of the behavior of the rover that we'll implement:
 
       * When it receives an ``f``, it moves forward one position in the direction it is facing.
       * When it receives a ``b``, it moves backward one position in the direction it is facing.
-      * When it receives a ``l``, it turns left changing its direction (by one step in the direction).
-      * When it receives a ``r``, it turns right changing its direction (by one step in the direction).
+      * When it receives a ``l``, it turns left changing its direction (turns 90 degrees and remains in the same position).
+      * When it receives a ``r``, it turns right changing its direction (turns 90 degrees and remains in the same position).
+  
