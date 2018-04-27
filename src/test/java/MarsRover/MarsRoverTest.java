@@ -51,4 +51,13 @@ public class MarsRoverTest {
 
         assertThat(rover, is(new Rover(1, 2, "W")));
     }
+
+    @Test
+    public void backwards_facing_north() {
+        Rover rover = new Rover(2, 2, "N");
+
+        rover.receive("b");
+
+        assertThat(rover, is(new Rover(2, 1, "N")));
+    }
 }

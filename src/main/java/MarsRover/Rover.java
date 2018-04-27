@@ -18,14 +18,18 @@ class Rover {
             return;
         }
 
-        if (direction.equals("E")) {
-            this.x += 1;
-        } else if (direction.equals("S")) {
+        if (commands.equals("b")) {
             this.y -= 1;
-        } else if (direction.equals("W")) {
-            this.x -= 1;
         } else {
-            this.y += 1;
+            if (direction.equals("E")) {
+                this.x += 1;
+            } else if (direction.equals("S")) {
+                this.y -= 1;
+            } else if (direction.equals("W")) {
+                this.x -= 1;
+            } else {
+                this.y += 1;
+            }
         }
     }
 
