@@ -17,7 +17,11 @@ class Rover {
         if (commands.isEmpty()) {
             return;
         }
-        this.y += 1;
+        if (direction.equals("E")) {
+            this.x += 1;
+        } else {
+            this.y += 1;
+        }
     }
 
     @Override
@@ -34,5 +38,14 @@ class Rover {
     public int hashCode() {
 
         return Objects.hash(x, y, direction);
+    }
+
+    @Override
+    public String toString() {
+        return "Rover{" +
+                "x=" + x +
+                ", y=" + y +
+                ", direction='" + direction + '\'' +
+                '}';
     }
 }
