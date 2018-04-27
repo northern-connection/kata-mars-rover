@@ -5,12 +5,12 @@ import java.util.Objects;
 class Rover {
     private int x;
     private int y;
-    private String direction;
+    private Direction direction;
 
     public Rover(int x, int y, String direction) {
         this.x = x;
         this.y = y;
-        this.setDirection(direction);
+        this.direction = Direction.create(direction);
     }
 
     public void receive(String commands) {
@@ -21,11 +21,11 @@ class Rover {
         if (commands.equals("b")) {
             this.y -= 1;
         } else {
-            if (getDirection().equals("E")) {
+            if (direction.equals(Direction.EAST)) {
                 this.x += 1;
-            } else if (getDirection().equals("S")) {
+            } else if (direction.equals(Direction.SOUTH)) {
                 this.y -= 1;
-            } else if (getDirection().equals("W")) {
+            } else if (direction.equals(Direction.WEST)) {
                 this.x -= 1;
             } else {
                 this.y += 1;
@@ -40,13 +40,13 @@ class Rover {
         Rover rover = (Rover) o;
         return x == rover.x &&
                 y == rover.y &&
-                Objects.equals(getDirection(), rover.getDirection());
+                direction == rover.direction;
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(x, y, getDirection());
+        return Objects.hash(x, y, direction);
     }
 
     @Override
@@ -54,15 +54,7 @@ class Rover {
         return "Rover{" +
                 "x=" + x +
                 ", y=" + y +
-                ", direction='" + getDirection() + '\'' +
+                ", direction=" + direction +
                 '}';
-    }
-
-    public String getDirection() {
-        return direction;
-    }
-
-    public void setDirection(String direction) {
-        this.direction = direction;
     }
 }
