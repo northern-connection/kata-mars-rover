@@ -33,4 +33,8 @@ public enum Direction {
     }
 
     public abstract Point moveForward(Point point);
+
+    public Point moveBackwards(Point point) {
+        return point.addY(-1);
+    }
 }

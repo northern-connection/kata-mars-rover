@@ -17,7 +17,7 @@ class Rover {
         }
 
         if (commands.equals("b")) {
-            point = point.addY(-1);
+            point = direction.moveBackwards(point);
         } else {
             point = direction.moveForward(point);
         }
