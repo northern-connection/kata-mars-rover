@@ -10,15 +10,27 @@ public enum Direction {
         public Point moveForward(Point point) {
             return point.addX(1);
         }
+
+        public Point moveBackwards(Point point) {
+            return point.addX(-1);
+        }
     },
     SOUTH {
         public Point moveForward(Point point) {
             return point.addY(-1);
         }
+
+        public Point moveBackwards(Point point) {
+            return point.addY(1);
+        }
     },
     WEST {
         public Point moveForward(Point point) {
             return point.addX(-1);
+        }
+
+        public Point moveBackwards(Point point) {
+            return point.addX(1);
         }
     };
 
