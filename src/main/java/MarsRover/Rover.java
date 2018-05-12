@@ -35,36 +35,34 @@ class Rover {
         }
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Rover rover = (Rover) o;
-        return getX() == rover.getX() &&
-                getY() == rover.getY() &&
-                direction == rover.direction;
-    }
-
-    @Override
-    public int hashCode() {
-
-        return Objects.hash(getX(), getY(), direction);
-    }
-
-    @Override
-    public String toString() {
-        return "Rover{" +
-                "x=" + getX() +
-                ", y=" + getY() +
-                ", direction=" + direction +
-                '}';
-    }
-
     private int getX() {
         return point.getX();
     }
 
     private int getY() {
         return point.getY();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Rover rover = (Rover) o;
+        return Objects.equals(point, rover.point) &&
+                direction == rover.direction;
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(point, direction);
+    }
+
+    @Override
+    public String toString() {
+        return "Rover{" +
+                "point=" + point +
+                ", direction=" + direction +
+                '}';
     }
 }
