@@ -19,15 +19,7 @@ class Rover {
         if (commands.equals("b")) {
             point = point.addY(-1);
         } else {
-            if (direction.equals(Direction.EAST)) {
-                point = point.addX(1);
-            } else if (direction.equals(Direction.SOUTH)) {
-                point = point.addY(-1);
-            } else if (direction.equals(Direction.WEST)) {
-                point = point.addX(-1);
-            } else {
-                point = point.addY(1);
-            }
+            point = direction.moveForward(point);
         }
     }
 
