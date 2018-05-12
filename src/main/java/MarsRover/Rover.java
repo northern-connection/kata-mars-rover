@@ -8,10 +8,6 @@ class Rover {
 
     public Rover(int x, int y, String direction) {
         this.direction = Direction.create(direction);
-        setPoint(x,y);
-    }
-
-    private void setPoint(int x, int y) {
         point = new Point(x, y);
     }
 
@@ -21,26 +17,18 @@ class Rover {
         }
 
         if (commands.equals("b")) {
-            setPoint(getX(),getY() - 1);
+            point = point.addY(-1);
         } else {
             if (direction.equals(Direction.EAST)) {
-                setPoint(getX() + 1, getY());
+                point = point.addX(1);
             } else if (direction.equals(Direction.SOUTH)) {
-                setPoint(getX(), getY() - 1);
+                point = point.addY(-1);
             } else if (direction.equals(Direction.WEST)) {
-                setPoint(getX() - 1, getY());
+                point = point.addX(-1);
             } else {
-                setPoint(getX(), getY() + 1);
+                point = point.addY(1);
             }
         }
-    }
-
-    private int getX() {
-        return point.getX();
-    }
-
-    private int getY() {
-        return point.getY();
     }
 
     @Override

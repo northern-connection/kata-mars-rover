@@ -7,17 +7,16 @@ public class Point {
     private final int y;
 
     public Point(int x, int y) {
-
         this.x = x;
         this.y = y;
     }
 
-    public int getX() {
-        return x;
+    public Point addX(int increment) {
+        return new Point(x + increment, y);
     }
 
-    public int getY() {
-        return y;
+    Point addY(int increment) {
+        return new Point(x, y + increment);
     }
 
     @Override
