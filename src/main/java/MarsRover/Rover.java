@@ -3,14 +3,16 @@ package MarsRover;
 import java.util.Objects;
 
 class Rover {
-    private int x;
-    private int y;
+    private Point point;
     private Direction direction;
 
     public Rover(int x, int y, String direction) {
-        this.x = x;
-        this.y = y;
         this.direction = Direction.create(direction);
+        setPoint(x,y);
+    }
+
+    private void setPoint(int x, int y) {
+        point = new Point(x, y);
     }
 
     public void receive(String commands) {
@@ -19,16 +21,16 @@ class Rover {
         }
 
         if (commands.equals("b")) {
-            this.y -= 1;
+            setPoint(getX(),getY() - 1);
         } else {
             if (direction.equals(Direction.EAST)) {
-                this.x += 1;
+                setPoint(getX() + 1, getY());
             } else if (direction.equals(Direction.SOUTH)) {
-                this.y -= 1;
+                setPoint(getX(), getY() - 1);
             } else if (direction.equals(Direction.WEST)) {
-                this.x -= 1;
+                setPoint(getX() - 1, getY());
             } else {
-                this.y += 1;
+                setPoint(getX(), getY() + 1);
             }
         }
     }
@@ -38,23 +40,31 @@ class Rover {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Rover rover = (Rover) o;
-        return x == rover.x &&
-                y == rover.y &&
+        return getX() == rover.getX() &&
+                getY() == rover.getY() &&
                 direction == rover.direction;
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(x, y, direction);
+        return Objects.hash(getX(), getY(), direction);
     }
 
     @Override
     public String toString() {
         return "Rover{" +
-                "x=" + x +
-                ", y=" + y +
+                "x=" + getX() +
+                ", y=" + getY() +
                 ", direction=" + direction +
                 '}';
+    }
+
+    private int getX() {
+        return point.getX();
+    }
+
+    private int getY() {
+        return point.getY();
     }
 }
