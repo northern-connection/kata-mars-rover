@@ -37,8 +37,6 @@ class Rover {
     }
 
     private void move(int incX, int incY) {
-        this.setX(this.getX() + incX);
-        this.setY(this.getY() + incY);
         this.point = new Point(this.point.getX() + incX, this.point.getY() + incY);
     }
 
@@ -47,24 +45,14 @@ class Rover {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Rover rover = (Rover) o;
-        return getX() == rover.getX() &&
-                getY() == rover.getY() &&
+        return Objects.equals(point, rover.point) &&
                 newDirection == rover.newDirection;
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(getX(), getY(), newDirection);
-    }
-
-    @Override
-    public String toString() {
-        return "Rover{" +
-                "x=" + getX() +
-                ", y=" + getY() +
-                ", newDirection=" + newDirection +
-                '}';
+        return Objects.hash(point, newDirection);
     }
 
     public int getX() {
