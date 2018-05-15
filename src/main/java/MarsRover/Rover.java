@@ -17,23 +17,19 @@ class Rover {
         }
 
         if (commands.equals("b")) {
-            this.move(0, -1);
+            this.point = point.move(0, -1);
 
         } else {
             if (direction == Direction.EAST) {
-                this.move(1, 0);
+                this.point = point.move(1, 0);
             } else if (direction == Direction.SOUTH) {
-                this.move(0, -1);
+                this.point = point.move(0, -1);
             } else if (direction == Direction.WEST) {
-                this.move(-1, 0);
+                this.point = point.move(-1, 0);
             } else {
-                this.move(0, 1);
+                this.point = point.move(0, 1);
             }
         }
-    }
-
-    private void move(int incX, int incY) {
-        this.point = point.move(incX, incY);
     }
 
     @Override
