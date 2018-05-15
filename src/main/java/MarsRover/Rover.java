@@ -5,13 +5,11 @@ import java.util.Objects;
 class Rover {
     private int x;
     private int y;
-    private String direction;
     private Direction newDirection;
 
     public Rover(int x, int y, String direction) {
         this.x = x;
         this.y = y;
-        this.setDirection(direction);
         this.newDirection = Direction.from(direction);
     }
 
@@ -42,13 +40,13 @@ class Rover {
         Rover rover = (Rover) o;
         return x == rover.x &&
                 y == rover.y &&
-                Objects.equals(getDirection(), rover.getDirection());
+                newDirection == rover.newDirection;
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(x, y, getDirection());
+        return Objects.hash(x, y, newDirection);
     }
 
     @Override
@@ -56,15 +54,7 @@ class Rover {
         return "Rover{" +
                 "x=" + x +
                 ", y=" + y +
-                ", direction='" + getDirection() + '\'' +
+                ", newDirection=" + newDirection +
                 '}';
-    }
-
-    public String getDirection() {
-        return direction;
-    }
-
-    public void setDirection(String direction) {
-        this.direction = direction;
     }
 }

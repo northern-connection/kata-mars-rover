@@ -14,4 +14,9 @@ public enum Direction {
         }
         return Direction.WEST;
     }
+
+    @Override
+    public String toString() {
+        return "Direction{}";
+    }
 }
