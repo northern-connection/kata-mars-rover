@@ -23,7 +23,7 @@ class Rover {
         if (commands.equals("b")) {
             this.y -= 1;
         } else {
-            if (getDirection().equals("E")) {
+            if (newDirection == Direction.EAST) {
                 this.x += 1;
             } else if (getDirection().equals("S")) {
                 this.y -= 1;
