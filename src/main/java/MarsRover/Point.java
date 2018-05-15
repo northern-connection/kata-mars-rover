@@ -41,4 +41,8 @@ public class Point {
                 ", y=" + y +
                 '}';
     }
+
+    public Point move(int incX, int incY) {
+        return new Point(this.getX() + incX, this.getY() + incY);
+    }
 }
