@@ -23,11 +23,11 @@ class Rover {
             if (direction == Direction.EAST) {
                 this.point = direction.forward(point);
             } else if (direction == Direction.SOUTH) {
-                this.point = point.move(0, -1);
+                this.point = direction.forward(point);
             } else if (direction == Direction.WEST) {
-                this.point = point.move(-1, 0);
+                this.point = direction.forward(point);
             } else {
-                this.point = point.move(0, 1);
+                this.point = direction.forward(point);
             }
         }
     }

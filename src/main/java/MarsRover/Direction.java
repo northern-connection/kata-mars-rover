@@ -1,14 +1,26 @@
 package MarsRover;
 
 public enum Direction {
-    NORTH,
-    SOUTH,
+    NORTH {
+        public Point forward(Point point) {
+            return point.move(0, 1);
+        }
+    },
+    SOUTH {
+        public Point forward(Point point) {
+            return point.move(0, -1);
+        }
+    },
     EAST {
         public Point forward(Point point) {
             return point.move(1, 0);
         }
     },
-    WEST;
+    WEST {
+        public Point forward(Point point) {
+            return point.move(-1, 0);
+        }
+    };
 
     public static Direction from(String direction) {
         switch (direction) {
@@ -27,7 +39,5 @@ public enum Direction {
         return "Direction{}";
     }
 
-    public Point forward(Point point) {
-        return new Point(0,0);
-    }
+    public abstract Point forward(Point point);
 }
