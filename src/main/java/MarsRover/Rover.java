@@ -9,8 +9,6 @@ class Rover {
     private Direction newDirection;
 
     public Rover(int x, int y, String direction) {
-        this.setX(x);
-        this.setY(y);
         this.point = new Point(x, y);
         this.newDirection = Direction.from(direction);
     }
