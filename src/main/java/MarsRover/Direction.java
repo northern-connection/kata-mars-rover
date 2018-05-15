@@ -18,7 +18,7 @@ public enum Direction {
 
         @Override
         public Point backwards(Point point) {
-            return null;
+            return point.move(0, 1);
         }
     },
     EAST {
@@ -28,7 +28,7 @@ public enum Direction {
 
         @Override
         public Point backwards(Point point) {
-            return null;
+            return point.move(-1, 0);
         }
     },
     WEST {
@@ -38,7 +38,7 @@ public enum Direction {
 
         @Override
         public Point backwards(Point point) {
-            return null;
+            return point.move(1, 0);
         }
     };
 
