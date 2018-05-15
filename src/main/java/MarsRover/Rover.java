@@ -5,11 +5,13 @@ import java.util.Objects;
 class Rover {
     private int x;
     private int y;
+    private Point point;
     private Direction newDirection;
 
     public Rover(int x, int y, String direction) {
         this.x = x;
         this.y = y;
+        this.point = new Point(x, y);
         this.newDirection = Direction.from(direction);
     }
 
