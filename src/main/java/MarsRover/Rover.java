@@ -22,7 +22,7 @@ class Rover {
             this.y -= 1;
         } else {
             if (newDirection == Direction.EAST) {
-                this.setPoint(this.x + 1, this.y);
+                this.move(1, 0);
             } else if (newDirection == Direction.SOUTH) {
                 this.y -= 1;
             } else if (newDirection == Direction.WEST) {
@@ -33,9 +33,9 @@ class Rover {
         }
     }
 
-    private void setPoint(int x, int y) {
-        this.x = x;
-        this.y = y;
+    private void move(int incX, int incY) {
+        this.x = this.x + incX;
+        this.y = this.y + incY;
     }
 
     @Override
