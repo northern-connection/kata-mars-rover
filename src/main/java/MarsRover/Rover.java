@@ -19,7 +19,8 @@ class Rover {
         }
 
         if (commands.equals("b")) {
-            this.y -= 1;
+            this.move(0, -1);
+
         } else {
             if (newDirection == Direction.EAST) {
                 this.move(1, 0);
