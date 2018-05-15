@@ -9,8 +9,8 @@ class Rover {
     private Direction newDirection;
 
     public Rover(int x, int y, String direction) {
-        this.x = x;
-        this.y = y;
+        this.setX(x);
+        this.setY(y);
         this.point = new Point(x, y);
         this.newDirection = Direction.from(direction);
     }
@@ -37,8 +37,8 @@ class Rover {
     }
 
     private void move(int incX, int incY) {
-        this.x = this.x + incX;
-        this.y = this.y + incY;
+        this.setX(this.getX() + incX);
+        this.setY(this.getY() + incY);
     }
 
     @Override
@@ -46,23 +46,39 @@ class Rover {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Rover rover = (Rover) o;
-        return x == rover.x &&
-                y == rover.y &&
+        return getX() == rover.getX() &&
+                getY() == rover.getY() &&
                 newDirection == rover.newDirection;
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(x, y, newDirection);
+        return Objects.hash(getX(), getY(), newDirection);
     }
 
     @Override
     public String toString() {
         return "Rover{" +
-                "x=" + x +
-                ", y=" + y +
+                "x=" + getX() +
+                ", y=" + getY() +
                 ", newDirection=" + newDirection +
                 '}';
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
     }
 }
