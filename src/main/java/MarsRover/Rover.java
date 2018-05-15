@@ -25,9 +25,9 @@ class Rover {
         } else {
             if (newDirection == Direction.EAST) {
                 this.x += 1;
-            } else if (getDirection().equals("S")) {
+            } else if (newDirection == Direction.SOUTH) {
                 this.y -= 1;
-            } else if (getDirection().equals("W")) {
+            } else if (newDirection == Direction.WEST) {
                 this.x -= 1;
             } else {
                 this.y += 1;
