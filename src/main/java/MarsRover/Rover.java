@@ -39,6 +39,7 @@ class Rover {
     private void move(int incX, int incY) {
         this.setX(this.getX() + incX);
         this.setY(this.getY() + incY);
+        this.point = new Point(this.point.getX() + incX, this.point.getY() + incY);
     }
 
     @Override
