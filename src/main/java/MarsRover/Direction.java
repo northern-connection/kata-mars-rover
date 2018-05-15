@@ -19,4 +19,9 @@ public enum Direction {
     public String toString() {
         return "Direction{}";
     }
+
+    public Point move(Point point) {
+        return point.move(1, 0);
+    }
+
 }
