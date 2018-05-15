@@ -5,20 +5,40 @@ public enum Direction {
         public Point forward(Point point) {
             return point.move(0, 1);
         }
+
+        @Override
+        public Point backwards(Point point) {
+            return point.move(0, -1);
+        }
     },
     SOUTH {
         public Point forward(Point point) {
             return point.move(0, -1);
+        }
+
+        @Override
+        public Point backwards(Point point) {
+            return null;
         }
     },
     EAST {
         public Point forward(Point point) {
             return point.move(1, 0);
         }
+
+        @Override
+        public Point backwards(Point point) {
+            return null;
+        }
     },
     WEST {
         public Point forward(Point point) {
             return point.move(-1, 0);
+        }
+
+        @Override
+        public Point backwards(Point point) {
+            return null;
         }
     };
 
@@ -40,4 +60,6 @@ public enum Direction {
     }
 
     public abstract Point forward(Point point);
+
+    public abstract Point backwards(Point point);
 }
