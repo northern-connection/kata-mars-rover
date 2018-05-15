@@ -24,11 +24,11 @@ class Rover {
             if (newDirection == Direction.EAST) {
                 this.move(1, 0);
             } else if (newDirection == Direction.SOUTH) {
-                this.y -= 1;
+                this.move(0, -1);
             } else if (newDirection == Direction.WEST) {
-                this.x -= 1;
+                this.move(-1, 0);
             } else {
-                this.y += 1;
+                this.move(0, 1);
             }
         }
     }
