@@ -4,7 +4,7 @@ public enum Direction {
     NORTH,
     SOUTH,
     EAST {
-        public Point move(Point point) {
+        public Point forward(Point point) {
             return point.move(1, 0);
         }
     },
@@ -27,7 +27,7 @@ public enum Direction {
         return "Direction{}";
     }
 
-    public Point move(Point point) {
+    public Point forward(Point point) {
         return new Point(0,0);
     }
 }

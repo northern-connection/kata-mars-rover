@@ -21,7 +21,7 @@ class Rover {
 
         } else {
             if (direction == Direction.EAST) {
-                this.point = direction.move(point);
+                this.point = direction.forward(point);
             } else if (direction == Direction.SOUTH) {
                 this.point = point.move(0, -1);
             } else if (direction == Direction.WEST) {
