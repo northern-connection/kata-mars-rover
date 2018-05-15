@@ -10,7 +10,7 @@ class Rover {
     public Rover(int x, int y, String direction) {
         this.x = x;
         this.y = y;
-        this.direction = direction;
+        this.setDirection(direction);
     }
 
     public void receive(String commands) {
@@ -21,11 +21,11 @@ class Rover {
         if (commands.equals("b")) {
             this.y -= 1;
         } else {
-            if (direction.equals("E")) {
+            if (getDirection().equals("E")) {
                 this.x += 1;
-            } else if (direction.equals("S")) {
+            } else if (getDirection().equals("S")) {
                 this.y -= 1;
-            } else if (direction.equals("W")) {
+            } else if (getDirection().equals("W")) {
                 this.x -= 1;
             } else {
                 this.y += 1;
@@ -40,13 +40,13 @@ class Rover {
         Rover rover = (Rover) o;
         return x == rover.x &&
                 y == rover.y &&
-                Objects.equals(direction, rover.direction);
+                Objects.equals(getDirection(), rover.getDirection());
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(x, y, direction);
+        return Objects.hash(x, y, getDirection());
     }
 
     @Override
@@ -54,7 +54,15 @@ class Rover {
         return "Rover{" +
                 "x=" + x +
                 ", y=" + y +
-                ", direction='" + direction + '\'' +
+                ", direction='" + getDirection() + '\'' +
                 '}';
+    }
+
+    public String getDirection() {
+        return direction;
+    }
+
+    public void setDirection(String direction) {
+        this.direction = direction;
     }
 }
