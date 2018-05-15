@@ -4,11 +4,11 @@ import java.util.Objects;
 
 class Rover {
     private Point point;
-    private Direction newDirection;
+    private Direction direction;
 
     public Rover(int x, int y, String direction) {
         this.point = new Point(x, y);
-        this.newDirection = Direction.from(direction);
+        this.direction = Direction.from(direction);
     }
 
     public void receive(String commands) {
@@ -20,11 +20,11 @@ class Rover {
             this.move(0, -1);
 
         } else {
-            if (newDirection == Direction.EAST) {
+            if (direction == Direction.EAST) {
                 this.move(1, 0);
-            } else if (newDirection == Direction.SOUTH) {
+            } else if (direction == Direction.SOUTH) {
                 this.move(0, -1);
-            } else if (newDirection == Direction.WEST) {
+            } else if (direction == Direction.WEST) {
                 this.move(-1, 0);
             } else {
                 this.move(0, 1);
@@ -42,12 +42,12 @@ class Rover {
         if (o == null || getClass() != o.getClass()) return false;
         Rover rover = (Rover) o;
         return Objects.equals(point, rover.point) &&
-                newDirection == rover.newDirection;
+                direction == rover.direction;
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(point, newDirection);
+        return Objects.hash(point, direction);
     }
 }
